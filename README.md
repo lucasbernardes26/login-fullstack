@@ -1,12 +1,40 @@
-# React + Vite
+# Sistema de Login Fullstack 🔐
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um sistema completo de autenticação de usuários (Registro e Login) com área administrativa protegida, desenvolvido como projeto prático de operações CRUD e segurança web.
 
-Currently, two official plugins are available:
+O backend foi estruturado seguindo a **Arquitetura MSEP** (Model/Repository, Service, Entity, Presentation/Controller), garantindo uma separação clara de responsabilidades.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Funcionalidades
 
-## Expanding the ESLint configuration
+* **Cadastro de Usuários:** Senhas são criptografadas antes de serem salvas no banco de dados.
+* **Autenticação Segura:** Login validado com geração de token JWT (JSON Web Token).
+* **Rotas Protegidas:** Área administrativa acessível apenas com um token JWT válido.
+* **Interface Dinâmica:** Navegação fluida no frontend (Single Page Application).
+* **Logout:** Encerramento de sessão seguro com limpeza de credenciais locais.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Tecnologias Utilizadas
+
+**Frontend:**
+* [React](https://reactjs.org/) (com Vite)
+* [React Router DOM](https://reactrouter.com/) (Navegação)
+* [Axios](https://axios-http.com/) (Requisições HTTP)
+* CSS puro para estilização de componentes (Cards e Forms)
+
+**Backend:**
+* [Node.js](https://nodejs.org/) com [Express](https://expressjs.com/)
+* [MySQL2](https://www.npmjs.com/package/mysql2) (Conexão com banco de dados)
+* [Bcrypt.js](https://www.npmjs.com/package/bcryptjs) (Criptografia de senhas)
+* [JSON Web Token (JWT)](https://jwt.io/) (Autenticação)
+* [CORS](https://www.npmjs.com/package/cors) & [Dotenv](https://www.npmjs.com/package/dotenv)
+
+## 📁 Estrutura do Backend (MSEP)
+
+O projeto foi dividido nas seguintes camadas lógicas:
+- **Presentation (Controller):** Lida com as requisições HTTP e respostas (`/register`, `/login`, `/admin-data`).
+- **Service:** Contém todas as regras de negócio, validações e geração de tokens.
+- **Entity:** Representação da estrutura de dados do Desenvolvedor.
+- **Model (Repository):** Responsável exclusivo por executar as queries diretamente no MySQL.
+
+#
+
+Desenvolvido por Lucas Bernardes 💻
