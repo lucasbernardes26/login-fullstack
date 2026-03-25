@@ -1,0 +1,8 @@
+CREATE DATABASE sistema_dev;
+use sistema_dev;
+
+CREATE TABLE desenvolvedor(
+    id int primary key auto_increment,
+    login varchar(50) UNIQUE NOT NULL,
+    senha varchar(255) NOT NULL 
+);
