@@ -1,11 +1,11 @@
-/* Reset básico para tirar margens padrão do navegador */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Fundo da tela inteira e fonte moderna */
+
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: #f0f2f5;
@@ -16,7 +16,7 @@ body {
   min-height: 100vh;
 }
 
-/* O "Card" branco onde os formulários vão ficar */
+
 .card-container {
   background-color: #ffffff;
   padding: 40px;
@@ -32,7 +32,7 @@ body {
   color: #1a1a1a;
 }
 
-/* Estilo do formulário em si */
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -58,7 +58,7 @@ body {
 
 .form-group input:focus {
   outline: none;
-  border-color: #4CAF50; /* Um verde bonito para o foco */
+  border-color: #4CAF50; 
   box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
 }
 
@@ -92,7 +92,7 @@ body {
   background-color: #da190b;
 }
 
-/* Links e textos de apoio */
+
 .text-footer {
   text-align: center;
   font-size: 14px;
