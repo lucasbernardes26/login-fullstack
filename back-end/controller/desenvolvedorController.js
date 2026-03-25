@@ -42,6 +42,20 @@ const DesenvolvedorController = {
         } catch (erro) {
             return res.status(401).json({ erro: erro.message });
         }
+    },
+
+    async perfil(req, res) {
+        try {
+            const { id, login } = req.usuario;
+            
+         
+            return res.status(200).json({ 
+                mensagem: `Bem-vindo ao painel seguro, ${login}!`,
+                usuario: { id, login }
+            });
+        } catch (erro) {
+            return res.status(500).json({ erro: 'Erro interno no servidor ao aceder à área protegida.' });
+        }
     }
 };
 

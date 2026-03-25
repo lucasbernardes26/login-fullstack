@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs');
 const DesenvolvedorRepository = require('../repository/desenvolvedorRepository');
+const jwt = require('jsonwebtoken'); 
 
 const DesenvolvedorService = {
 
@@ -30,9 +31,15 @@ const DesenvolvedorService = {
             throw new Error('Palavra-passe inválida.');
         }
         
+        const token = jwt.sign(
+            { id: desenvolvedor.id, login: desenvolvedor.login }, 
+            process.env.JWT_SECRET, 
+            { expiresIn: '1h' }
+        );
         return { 
             id: desenvolvedor.id, 
-            login: desenvolvedor.login 
+            login: desenvolvedor.login,
+            token: token 
         };
     }
 };

@@ -15,15 +15,18 @@ export default function Login() {
     setErro('');
 
     try {
-      const response = await axios.post('http://localhost:3000/login', {
-        login,
-        senha
-      });
-
-      if (response.status === 200) {
-        navigate('/admin');
-      }
-    } catch (error) {
+        const response = await axios.post('http://localhost:3000/login', {
+          login,
+          senha
+        });
+  
+        if (response.status === 200) {
+          const token = response.data.desenvolvedor.token;
+          localStorage.setItem('token', token);
+          
+          navigate('/admin');
+        }
+      } catch (error) {
       if (error.response && error.response.data.erro) {
         setErro(error.response.data.erro);
       } else {

@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
+const verificarToken = require('./middleware/authMiddleware');
 
 const DesenvolvedorController = require('./controller/desenvolvedorController');
 
@@ -12,7 +13,7 @@ app.use(cors());
 
 app.post('/register', DesenvolvedorController.register);
 app.post('/login', DesenvolvedorController.login);
-
+app.get('/admin-data', verificarToken, DesenvolvedorController.perfil);
 
 const PORT = process.env.PORT || 3000;
 
