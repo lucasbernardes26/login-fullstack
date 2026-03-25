@@ -36,42 +36,42 @@ export default function Login() {
   };
 
   return (
-    <div style={{ maxWidth: '300px', margin: '50px auto', fontFamily: 'sans-serif' }}>
+    <div className="card-container">
       <h2>Entrar no Sistema</h2>
       
-      <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+      <form onSubmit={handleLogin} className="form-group">
         <div>
-          <label htmlFor="login">Login:</label><br />
+          <label htmlFor="login">Login</label>
           <input 
             type="text" 
             id="login"
             value={login} 
             onChange={(e) => setLogin(e.target.value)} 
             required 
-            style={{ width: '100%', padding: '8px' }}
+            placeholder="Digite seu usuário"
           />
         </div>
 
         <div>
-          <label htmlFor="senha">Senha:</label><br />
+          <label htmlFor="senha">Senha</label>
           <input 
             type="password" 
             id="senha"
             value={senha} 
             onChange={(e) => setSenha(e.target.value)} 
             required 
-            style={{ width: '100%', padding: '8px' }}
+            placeholder="Digite sua senha"
           />
         </div>
 
-        {erro && <p style={{ color: 'red', fontSize: '14px' }}>{erro}</p>}
+        {erro && <p className="mensagem-erro">{erro}</p>}
 
-        <button type="submit" style={{ padding: '10px', cursor: 'pointer' }}>
+        <button type="submit" className="btn-primary">
           Entrar
         </button>
       </form>
 
-      <p style={{ marginTop: '20px', fontSize: '14px' }}>
+      <p className="text-footer">
         Não tem uma conta? <Link to="/registro">Registre-se aqui</Link>
       </p>
     </div>

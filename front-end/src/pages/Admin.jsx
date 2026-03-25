@@ -46,31 +46,18 @@ function Admin() {
   };
 
   return (
-    <div style={{ maxWidth: '400px', margin: '50px auto', fontFamily: 'sans-serif', textAlign: 'center' }}>
+    <div className="card-container" style={{ textAlign: 'center' }}>
       <h2>Área Administrativa</h2>
       
-      <div style={{ padding: '20px', backgroundColor: '#e8f5e9', borderRadius: '8px', marginTop: '20px' }}>
-        
-        <h3>{mensagemServidor}</h3>
+      <div style={{ padding: '20px', backgroundColor: '#e8f5e9', borderRadius: '8px', margin: '20px 0 30px 0' }}>
+        <h3 style={{ color: '#2e7d32', marginBottom: '10px' }}>{mensagemServidor}</h3>
         
         {dadosUsuario && (
-          <p>O seu ID de desenvolvedor na base de dados é: <strong>{dadosUsuario.id}</strong></p>
+          <p>O teu ID de desenvolvedor é: <strong>{dadosUsuario.id}</strong></p>
         )}
       </div>
       
-      <button 
-        onClick={handleLogout} 
-        style={{ 
-          marginTop: '30px', 
-          padding: '10px 20px', 
-          cursor: 'pointer', 
-          backgroundColor: '#f44336', 
-          color: 'white', 
-          border: 'none', 
-          borderRadius: '4px',
-          fontWeight: 'bold'
-        }}
-      >
+      <button onClick={handleLogout} className="btn-primary btn-danger">
         Sair (Logout)
       </button>
     </div>

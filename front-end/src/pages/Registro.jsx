@@ -38,46 +38,45 @@ export default function Registro() {
   };
 
   return (
-    <div style={{ maxWidth: '350px', margin: '50px auto', fontFamily: 'sans-serif' }}>
-      <h2>Registro de Usuário</h2>
+    <div className="card-container">
+      <h2>Registo de Utilizador</h2>
       
-      <form onSubmit={handleRegistro} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+      <form onSubmit={handleRegistro} className="form-group">
         <div>
-          <label htmlFor="login">Login:</label><br />
+          <label htmlFor="login">Login</label>
           <input 
             type="text" 
             id="login"
             value={login} 
             onChange={(e) => setLogin(e.target.value)} 
             required 
-            style={{ width: '100%', padding: '8px' }}
+            placeholder="Escolhe um nome de utilizador"
           />
         </div>
 
         <div>
-          <label htmlFor="senha">Senha:</label><br />
-         
+          <label htmlFor="senha">Palavra-passe</label>
           <input 
             type="password" 
             id="senha"
             value={senha} 
             onChange={(e) => setSenha(e.target.value)} 
             required 
-            style={{ width: '100%', padding: '8px' }}
+            placeholder="Cria uma palavra-passe forte"
           />
         </div>
 
-        {erro && <p style={{ color: 'red', fontSize: '14px' }}>{erro}</p>}
-        {mensagem && <p style={{ color: 'green', fontSize: '14px', fontWeight: 'bold' }}>{mensagem}</p>}
+        {/* Mensagens de erro e sucesso */}
+        {erro && <p className="mensagem-erro">{erro}</p>}
+        {mensagem && <p style={{ color: '#4CAF50', fontSize: '14px', textAlign: 'center', fontWeight: 'bold' }}>{mensagem}</p>}
 
-        {/* botão de cadastrar */}
-        <button type="submit" style={{ padding: '10px', cursor: 'pointer' }}>
-          Cadastrar
+        <button type="submit" className="btn-primary">
+          Registar
         </button>
       </form>
 
-      <p style={{ marginTop: '20px', fontSize: '14px' }}>
-        Já tem uma conta? <Link to="/login">Faça login aqui</Link>
+      <p className="text-footer">
+        Já tens uma conta? <Link to="/login">Faz login aqui</Link>
       </p>
     </div>
   );
